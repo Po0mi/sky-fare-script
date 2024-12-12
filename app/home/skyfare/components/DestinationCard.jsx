@@ -1,3 +1,4 @@
+"use client";
 export default function DestinationCard({ name, country, price, image, link }) {
   return (
     <div className="flex overflow-hidden flex-col flex-1 shrink rounded-md basis-0 min-w-[240px]">

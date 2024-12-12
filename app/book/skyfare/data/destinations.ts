@@ -1,3 +1,4 @@
+"use client";
 import { DestinationProps } from "../types";
 
 export const destinations: DestinationProps[] = [

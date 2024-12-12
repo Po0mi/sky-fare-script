@@ -1,3 +1,4 @@
+"use client";
 export interface DestinationProps {
   emoji: string;
   name: string;

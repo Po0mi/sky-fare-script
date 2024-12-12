@@ -1,3 +1,4 @@
+"use client";
 export default function Footer() {
   return (
     <footer className="flex overflow-hidden z-0 gap-10 justify-center items-center px-16 w-full text-xl leading-7 text-center text-black max-md:px-5 max-md:max-w-full">

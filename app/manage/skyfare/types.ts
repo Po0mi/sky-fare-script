@@ -1,3 +1,4 @@
+"use client";
 export interface FlightCardProps {
   icon: string;
   destination: string;

@@ -1,3 +1,4 @@
+"use client";
 export default function FeatureCard({ icon, title, description }) {
   return (
     <div className="flex flex-col flex-1 shrink justify-center py-3 basis-0">

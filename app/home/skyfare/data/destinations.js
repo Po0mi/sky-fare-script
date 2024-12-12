@@ -1,3 +1,4 @@
+"use client";
 export const destinations = [
   {
     id: 1,

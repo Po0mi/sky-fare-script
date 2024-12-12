@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import Image from "next/image"; // Import Image from next/image
 import { navigationItems } from "../data/navigation";

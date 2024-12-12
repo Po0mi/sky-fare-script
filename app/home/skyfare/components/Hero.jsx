@@ -1,3 +1,4 @@
+"use client";
 export default function Hero() {
   return (
     <div className="flex overflow-hidden relative z-0 gap-10 justify-center items-center px-44 py-8 w-full bg-white bg-opacity-60 min-h-[160px] max-md:px-5 max-md:max-w-full">
