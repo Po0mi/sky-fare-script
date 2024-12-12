@@ -1,4 +1,5 @@
 import * as React from "react";
+import Image from "next/image"; // Import Image from Next.js
 import { Navigation } from "./components/Navigation";
 import { InfoCard } from "./components/InfoCard";
 import { NewsletterForm } from "./components/NewsletterForm";
@@ -11,11 +12,13 @@ export function SkyFare() {
       <div className="flex overflow-hidden relative z-0 flex-col justify-center px-44 py-16 w-full max-md:px-5 max-md:max-w-full">
         <div className="flex z-0 flex-wrap gap-10 justify-center items-center w-full max-md:max-w-full">
           <div className="flex overflow-hidden self-stretch my-auto min-h-[430px] min-w-[240px] w-[475px] max-md:max-w-full">
-            <img
+            <Image
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/575482322951499baba16b3a7f82119f/b305ab96e08ba814a25391d934cf64d26188644a2f0a6175fdcee48e6e7ce144?apiKey=575482322951499baba16b3a7f82119f&"
               alt="Sky Fare Airlines presentation"
               className="object-contain flex-1 shrink w-full aspect-[1.1] basis-0 min-w-[240px] max-md:max-w-full"
+              width={475} // Define width
+              height={430} // Define height
             />
           </div>
           <div className="flex flex-col flex-1 shrink self-stretch my-auto text-black basis-0 min-w-[240px] max-md:max-w-full">
@@ -34,11 +37,13 @@ export function SkyFare() {
             ))}
           </div>
         </div>
-        <img
+        <Image
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/575482322951499baba16b3a7f82119f/4375c0390c2ebe6f7cc8a48da21680487a9b51a064afdf60421a0e7a8892be8b?apiKey=575482322951499baba16b3a7f82119f&"
-          alt=""
+          alt="Sky Fare background"
           className="object-contain absolute inset-x-0 bottom-0 z-0 w-full h-0 max-md:max-w-full"
+          width={1440} // Define width
+          height={400} // Define height
         />
       </div>
       <div className="flex overflow-hidden relative z-0 gap-10 justify-center px-44 py-16 w-full max-md:px-5 max-md:max-w-full">
@@ -54,18 +59,22 @@ export function SkyFare() {
           <NewsletterForm />
         </div>
         <div className="flex overflow-hidden z-0 flex-1 shrink h-full basis-0 min-w-[240px] max-md:max-w-full">
-          <img
+          <Image
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/575482322951499baba16b3a7f82119f/8c006c7b871f62761073df10de8b3d6803bf33082da451661513697ebd45ea72?apiKey=575482322951499baba16b3a7f82119f&"
             alt="Newsletter subscription illustration"
             className="object-contain flex-1 shrink w-full aspect-[1.17] basis-0 min-w-[240px] max-md:max-w-full"
+            width={500} // Define width
+            height={400} // Define height
           />
         </div>
-        <img
+        <Image
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/575482322951499baba16b3a7f82119f/4375c0390c2ebe6f7cc8a48da21680487a9b51a064afdf60421a0e7a8892be8b?apiKey=575482322951499baba16b3a7f82119f&"
-          alt=""
+          alt="Sky Fare background"
           className="object-contain absolute inset-x-0 bottom-0 z-0 self-start h-0 w-[1440px] max-md:max-w-full"
+          width={1440} // Define width
+          height={400} // Define height
         />
       </div>
       <footer className="flex overflow-hidden z-0 gap-10 justify-center items-center px-16 w-full text-xl leading-7 text-center text-black max-md:px-5 max-md:max-w-full">
@@ -76,6 +85,5 @@ export function SkyFare() {
     </div>
   );
 }
-
 
 export default SkyFare;
