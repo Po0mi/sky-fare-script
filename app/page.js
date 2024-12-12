@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation"; // Import the useRouter hook
+import Image from "next/image"; // Import the Image component from Next.js
 
 // InputField Component
 const InputField = ({ label, icon, placeholder, type, value, onChange }) => {
@@ -12,11 +13,13 @@ const InputField = ({ label, icon, placeholder, type, value, onChange }) => {
         {label}
       </label>
       <div className="flex items-center py-2 px-4 mt-2 w-full bg-black rounded-lg border-2 border-white border-solid">
-        <img
+        <Image
           loading="lazy"
           src={icon}
           alt="icon"
-          className="object-contain w-6 h-6 mr-3"
+          width={24} // Set the width
+          height={24} // Set the height
+          className="object-contain mr-3"
         />
         <input
           id={inputId}
@@ -112,23 +115,29 @@ const LoginForm = () => {
             </div>
 
             <div className="flex gap-4 items-center mt-4 justify-center">
-              <img
+              <Image
                 loading="lazy"
                 src="https://static.vecteezy.com/system/resources/previews/022/613/021/non_2x/google-mail-gmail-icon-logo-symbol-free-png.png"
                 alt="Google Icon"
-                className="object-contain w-12 h-12 rounded-full shadow-lg hover:shadow-2xl transition-all transform hover:scale-110"
+                width={48}
+                height={48}
+                className="object-contain rounded-full shadow-lg hover:shadow-2xl transition-all transform hover:scale-110"
               />
-              <img
+              <Image
                 loading="lazy"
                 src="https://img.freepik.com/premium-vector/facebook-icon-illustration-facebook-app-logo-social-media-icon_561158-3660.jpg?semt=ais_hybrid"
                 alt="Facebook Icon"
-                className="object-contain w-12 h-12 rounded-full shadow-lg hover:shadow-2xl transition-all transform hover:scale-110"
+                width={48}
+                height={48}
+                className="object-contain rounded-full shadow-lg hover:shadow-2xl transition-all transform hover:scale-110"
               />
-              <img
+              <Image
                 loading="lazy"
                 src="https://i.etsystatic.com/24423171/r/il/3f60f3/5599338649/il_570xN.5599338649_rcwe.jpg"
                 alt="Apple Icon"
-                className="object-contain w-12 h-12 rounded-full shadow-lg hover:shadow-2xl transition-all transform hover:scale-110"
+                width={48}
+                height={48}
+                className="object-contain rounded-full shadow-lg hover:shadow-2xl transition-all transform hover:scale-110"
               />
             </div>
 
@@ -168,9 +177,11 @@ const Page = () => {
       }}
     >
       <LoginForm />
-      <img
+      <Image
         src="https://png.pngtree.com/png-clipart/20220110/original/pngtree-black-and-white-flying-paper-plane-png-image_7048937.png"
         alt="Flying Paper Plane"
+        width={200} // Set the width
+        height={160} // Set the height
         className="absolute top-0 left-25 w-50 h-40 transform rotate-45"
       />
     </div>

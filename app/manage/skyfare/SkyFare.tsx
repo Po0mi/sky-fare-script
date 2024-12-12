@@ -2,6 +2,7 @@
 import * as React from "react";
 import { FlightCard } from "./FlightCard";
 import { StatCard } from "./StatCard";
+import Image from "next/image";
 
 const upcomingFlights = [
   {
@@ -77,10 +78,12 @@ export function SkyFare() {
               placeholder="Search in site"
             />
             <button type="submit" aria-label="Search">
-              <img
+              <Image
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/575482322951499baba16b3a7f82119f/66d9a470fb75c27035749e639bb284dc4ba3d912b2b23446cd7ddad31a33bbff?apiKey=575482322951499baba16b3a7f82119f&"
-                alt=""
+                alt="Search Icon"
+                width={20}
+                height={20}
                 className="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
               />
             </button>
@@ -89,10 +92,12 @@ export function SkyFare() {
       </header>
 
       <div className="flex overflow-hidden relative z-0 gap-10 justify-center items-center px-44 py-8 w-full text-black bg-white bg-opacity-60 min-h-[160px] max-md:px-5 max-md:max-w-full">
-        <img
+        <Image
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/575482322951499baba16b3a7f82119f/4e134b82144eaab1aeb6f66d3f05f52ddae52d5ad83dbaa2510e6e823971b971?apiKey=575482322951499baba16b3a7f82119f&"
           alt="Sky Fare Maris Logo"
+          width={100}
+          height={100}
           className="object-contain z-0 shrink-0 self-stretch my-auto aspect-square rounded-[50px] w-[100px]"
         />
         <div className="flex z-0 flex-col flex-1 shrink self-stretch my-auto basis-0 min-w-[240px] max-md:max-w-full">
@@ -201,11 +206,13 @@ export function SkyFare() {
               Flights Performance
             </h3>
             <p className="mt-3 max-md:max-w-full">Number of Flights</p>
-            <img
+            <Image
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/575482322951499baba16b3a7f82119f/548ed912a5b7861e5a5b35021d29837901ee39a9d1e827ccbdbbb2b38d4b9114?apiKey=575482322951499baba16b3a7f82119f&"
               alt="Flight performance graph showing number of flights over months"
               className="object-contain flex-1 mt-3 w-full aspect-[3.68] max-md:max-w-full"
+              width={700}
+              height={380}
             />
             <p className="mt-3 text-right max-md:max-w-full">Months</p>
           </div>
