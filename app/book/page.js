@@ -1,7 +1,7 @@
 "use client";
 import SkyFare from './skyfare/SkyFare'; // Ensure the path is correct
 
-const BookPage = () => {
+const Book = () => {
   return (
     <div>
       <h1></h1>
@@ -10,4 +10,4 @@ const BookPage = () => {
   );
 };
 
-export default BookPage;
+export default Book;

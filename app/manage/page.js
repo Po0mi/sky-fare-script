@@ -1,7 +1,7 @@
 "use client";
 import SkyFare from './skyfare/SkyFare'; // Ensure the path is correct
 
-const ManagePage = () => {
+const Manage = () => {
   return (
     <div>
       <h1></h1>
@@ -10,4 +10,4 @@ const ManagePage = () => {
   );
 };
 
-export default ManagePage;
+export default Manage;

@@ -1,7 +1,7 @@
 "use client";
 import SkyFare from './skyfare/SkyFare'; // Ensure the path is correct
 
-const HomePage = () => {
+const Home = () => {
   return (
     <div>
       <h1></h1>
@@ -10,4 +10,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;
