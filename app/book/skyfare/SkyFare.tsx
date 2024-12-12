@@ -1,4 +1,5 @@
 import * as React from "react";
+import Image from "next/image"; // Import Image component
 import { NavBar } from "./components/NavBar";
 import { FormField } from "./components/FormField";
 import { DestinationCard } from "./components/DestinationCard";
@@ -17,11 +18,13 @@ export const SkyFare = () => {
             Explore amazing deals and book your next adventure with Skyline.
           </p>
         </div>
-        <img
+        <Image
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/575482322951499baba16b3a7f82119f/4375c0390c2ebe6f7cc8a48da21680487a9b51a064afdf60421a0e7a8892be8b?apiKey=575482322951499baba16b3a7f82119f&"
-          alt=""
+          alt="Skyline"
           className="object-contain absolute inset-x-0 bottom-0 z-0 self-start h-0 w-[1440px] max-md:max-w-full"
+          width={1440} // Set width and height for Image component
+          height={800} // Adjust based on image aspect ratio
         />
       </div>
       <div className="flex overflow-hidden relative z-0 gap-10 justify-center items-center px-44 py-16 w-full max-md:px-5 max-md:max-w-full">
@@ -89,6 +92,5 @@ export const SkyFare = () => {
     </div>
   );
 };
-
 
 export default SkyFare;

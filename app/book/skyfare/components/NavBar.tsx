@@ -1,4 +1,5 @@
 import * as React from "react";
+import Image from "next/image"; // Import Image from next/image
 import { navigationItems } from "../data/navigation";
 
 export const NavBar = () => {
@@ -28,11 +29,13 @@ export const NavBar = () => {
             className="flex-1 shrink self-stretch my-auto basis-0 bg-transparent border-none focus:outline-none"
             placeholder="Search in site"
           />
-          <img
+          <Image
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/575482322951499baba16b3a7f82119f/66d9a470fb75c27035749e639bb284dc4ba3d912b2b23446cd7ddad31a33bbff?apiKey=575482322951499baba16b3a7f82119f&"
-            alt=""
+            alt="Search icon"
             className="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+            width={20} // Set appropriate width
+            height={20} // Set appropriate height
           />
         </div>
       </div>
