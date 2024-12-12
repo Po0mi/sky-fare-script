@@ -64,7 +64,7 @@ const LoginForm = () => {
 
     // Simulate login validation
     if (email === "test@example.com" && password === "password123") {
-      router.push("/home"); // Navigate to the flightBooking page
+      router.push("/home"); // Navigate to the home page
     } else {
       alert("Invalid credentials");
     }
@@ -143,7 +143,7 @@ const LoginForm = () => {
 
             <div className="mt-7 text-sm">
               <span style={{ fontFamily: '"Radio Canada Big", sans-serif', color: "rgb(0, 0, 0)" }}>
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
               </span>
               <button
                 type="button"
