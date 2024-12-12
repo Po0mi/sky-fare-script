@@ -3,6 +3,7 @@ import * as React from "react";
 import { FlightCard } from "./FlightCard";
 import { StatCard } from "./StatCard";
 import Image from "next/image";
+import Link from "next/link";  // Import Link from next/link
 
 const upcomingFlights = [
   {
@@ -55,18 +56,18 @@ export function SkyFare() {
           Sky Fare
         </div>
         <nav className="flex flex-wrap gap-10 justify-center items-center self-stretch my-auto text-base bg-white min-w-[240px] max-md:max-w-full">
-          <a href="/home" className="self-stretch my-auto">
+          <Link href="/home" className="self-stretch my-auto">
             Home
-          </a>
-          <a href="/book" className="self-stretch my-auto">
+          </Link>
+          <Link href="/book" className="self-stretch my-auto">
             Book
-          </a>
-          <a href="/manage" className="self-stretch my-auto">
+          </Link>
+          <Link href="/manage" className="self-stretch my-auto">
             Manage
-          </a>
-          <a href="/about" className="self-stretch my-auto">
+          </Link>
+          <Link href="/about" className="self-stretch my-auto">
             About
-          </a>
+          </Link>
           <form className="flex gap-1 items-center self-stretch p-2 my-auto text-sm leading-none rounded-md border border-solid border-black border-opacity-10 text-black text-opacity-50 w-[200px]">
             <label htmlFor="siteSearch" className="sr-only">
               Search in site
@@ -222,12 +223,12 @@ export function SkyFare() {
       <footer className="flex overflow-hidden z-0 gap-10 justify-center items-center px-16 mt-4 w-full text-xl leading-7 text-center max-md:px-5 max-md:max-w-full">
         <div className="flex flex-wrap gap-10 justify-center self-stretch my-auto min-h-[100px] min-w-[240px] max-md:max-w-full">
           <p className="w-[322px]">© 2022 Sky Fare. All rights reserved.</p>
-          <a href="/terms" className="w-[150px]">
+          <Link href="/terms" className="w-[150px]">
             Terms of Service
-          </a>
-          <a href="/privacy" className="w-[124px]">
+          </Link>
+          <Link href="/privacy" className="w-[124px]">
             Privacy Policy
-          </a>
+          </Link>
         </div>
       </footer>
     </div>
