@@ -1,3 +1,4 @@
+"use client";
 import Link from 'next/link'; // Import Link from Next.js
 
 export default function Header() {

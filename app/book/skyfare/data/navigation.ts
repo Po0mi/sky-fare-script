@@ -1,3 +1,4 @@
+"use client";
 import { NavItemProps } from "../types";
 
 export const navigationItems: NavItemProps[] = [
