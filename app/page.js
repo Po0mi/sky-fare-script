@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation"; // Import the useRouter hook
 import Image from "next/image"; // Import the Image component from Next.js
+import { motion } from "framer-motion"; // Import Framer Motion
 
 // InputField Component
 const InputField = ({ label, icon, placeholder, type, value, onChange }) => {
@@ -71,7 +72,12 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center px-8 pt-16 pb-24 text-lg text-white rounded-3xl max-md:px-5 max-md:pb-16">
+    <motion.div
+      className="flex flex-col items-center px-8 pt-16 pb-24 text-lg text-white rounded-3xl max-md:px-5 max-md:pb-16"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div className="flex flex-col max-w-lg w-full">
         <h1 className="self-center text-8xl font-bold text-white max-md:text-10xl" style={{ fontFamily: '"Roboto", sans-serif' }}>
           Sky Fare
@@ -160,14 +166,14 @@ const LoginForm = () => {
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 // Page Component (Rendering LoginForm)
 const Page = () => {
   return (
-    <div
+    <motion.div
       className="min-h-screen flex items-center justify-center relative"
       style={{
         backgroundImage: "url('https://img.freepik.com/free-vector/smooth-yellow-gradient-wallpaper-with-abstract-blur-effect-vector_1017-49159.jpg')",
@@ -175,16 +181,24 @@ const Page = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
-      <LoginForm />
+      {/* Paper Plane Image */}
       <Image
-        src="https://png.pngtree.com/png-clipart/20220110/original/pngtree-black-and-white-flying-paper-plane-png-image_7048937.png"
+        src="https://www.svgrepo.com/show/428747/paper-plane-message.svg"
         alt="Flying Paper Plane"
         width={200} // Set the width
         height={160} // Set the height
-        className="absolute top-0 left-25 w-50 h-40 transform rotate-45"
+        className="absolute top-0 left-25 w-50 h-40 transform rotate-50 z-0" // Add z-0 to place it behind
       />
-    </div>
+      
+      {/* Login Form */}
+      <div className="z-10"> {/* Add z-10 to ensure it overlays */}
+        <LoginForm />
+      </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,5 @@
 "use client";
+
 export default function Hero() {
   return (
     <div className="flex overflow-hidden relative z-0 gap-10 justify-center items-center px-44 py-8 w-full bg-white bg-opacity-60 min-h-[160px] max-md:px-5 max-md:max-w-full">
@@ -17,7 +18,7 @@ export default function Hero() {
         </p>
       </div>
       <div className="flex overflow-hidden z-0 flex-col self-stretch my-auto w-40 text-base font-medium text-white whitespace-nowrap">
-        <button className="p-3 w-40 max-w-full bg-black rounded-lg">
+        <button className="p-3 w-40 max-w-full bg-black rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:bg-opacity-80 hover:scale-105 hover:shadow-lg hover:border-2 hover:border-white">
           Discover
         </button>
       </div>

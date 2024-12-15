@@ -1,9 +1,10 @@
 "use client";
 import * as React from "react";
+import { motion } from "framer-motion"; // Import motion for animations
 import { FlightCard } from "./FlightCard";
 import { StatCard } from "./StatCard";
 import Image from "next/image";
-import Link from "next/link";  // Import Link from next/link
+import Link from "next/link";
 
 const upcomingFlights = [
   {
@@ -48,55 +49,80 @@ const stats = [
   },
 ];
 
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};  
+
 export function SkyFare() {
   return (
-    <div className="flex relative flex-col pt-20 bg-white">
+    <motion.div
+    className="flex relative flex-col pt-20 bg-white"
+    initial="hidden"
+    animate="visible"
+    exit="hidden"
+    variants={fadeIn}
+    >
+      {/* Header */}
       <header className="flex overflow-hidden absolute inset-x-0 top-0 z-0 flex-wrap gap-5 justify-center items-center px-5 py-6 w-full h-20 text-black bg-white min-h-[80px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full">
-        <div className="flex-1 shrink self-stretch my-auto text-3xl font-medium leading-none basis-0 max-md:max-w-full">
+        <div className="flex-1 shrink self-stretch my-auto text-3xl font-bold leading-none basis-0 max-md:max-w-full">
           Sky Fare
         </div>
         <nav className="flex flex-wrap gap-10 justify-center items-center self-stretch my-auto text-base bg-white min-w-[240px] max-md:max-w-full">
-          <Link href="/home" className="self-stretch my-auto">
-            Home
-          </Link>
-          <Link href="/book" className="self-stretch my-auto">
-            Book
-          </Link>
-          <Link href="/manage" className="self-stretch my-auto">
-            Manage
-          </Link>
-          <Link href="/about" className="self-stretch my-auto">
-            About
-          </Link>
-          <form className="flex gap-1 items-center self-stretch p-2 my-auto text-sm leading-none rounded-md border border-solid border-black border-opacity-10 text-black text-opacity-50 w-[200px]">
+          {[
+            { href: "/home", label: "Home" },
+            { href: "/book", label: "Book" },
+            { href: "/manage", label: "Manage" },
+            { href: "/about", label: "About" },
+          ].map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="self-stretch my-auto transition-all duration-300 transform hover:text-blue-500 hover:scale-110"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="flex gap-1 items-center self-stretch p-2 my-auto text-sm leading-none rounded-md border border-solid border-black border-opacity-10 text-black text-opacity-50 w-[250px]">
             <label htmlFor="siteSearch" className="sr-only">
               Search in site
             </label>
             <input
               type="search"
               id="siteSearch"
-              className="flex-1 shrink self-stretch my-auto basis-0 bg-transparent border-none outline-none"
+              className="flex-1 shrink self-stretch my-auto basis-0 bg-transparent border-none focus:outline-none"
               placeholder="Search in site"
             />
-            <button type="submit" aria-label="Search">
-              <Image
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/575482322951499baba16b3a7f82119f/66d9a470fb75c27035749e639bb284dc4ba3d912b2b23446cd7ddad31a33bbff?apiKey=575482322951499baba16b3a7f82119f&"
-                alt="Search Icon"
-                width={20}
-                height={20}
-                className="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
-              />
-            </button>
-          </form>
+            <Image
+              loading="lazy"
+              src="https://www.svgrepo.com/show/532555/search.svg"
+              alt="Search icon"
+              className="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+              width={20}
+              height={20}
+            />
+          </div>
         </nav>
       </header>
 
-      <div className="flex overflow-hidden relative z-0 gap-10 justify-center items-center px-44 py-8 w-full text-black bg-white bg-opacity-60 min-h-[160px] max-md:px-5 max-md:max-w-full">
+      {/* Hero Section */}
+      <motion.div
+        className="flex overflow-hidden relative z-0 gap-10 justify-center items-center px-44 py-8 w-full text-black bg-white bg-opacity-60 min-h-[160px] max-md:px-5 max-md:max-w-full"
+        variants={fadeIn}
+      >
         <Image
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/575482322951499baba16b3a7f82119f/4e134b82144eaab1aeb6f66d3f05f52ddae52d5ad83dbaa2510e6e823971b971?apiKey=575482322951499baba16b3a7f82119f&"
-          alt="Sky Fare Maris Logo"
+          alt="Sky Fare Logo"
           width={100}
           height={100}
           className="object-contain z-0 shrink-0 self-stretch my-auto aspect-square rounded-[50px] w-[100px]"
@@ -107,8 +133,9 @@ export function SkyFare() {
           </h1>
           <p className="mt-3 text-base max-md:max-w-full">Manage Your Flight</p>
         </div>
-      </div>
+      </motion.div>
 
+      {/* Upcoming Flights Section */}
       <section className="flex overflow-hidden relative z-0 gap-10 justify-center items-center px-44 w-full max-md:px-5 max-md:max-w-full">
         <h2 className="flex-1 shrink self-stretch my-auto text-4xl font-bold leading-tight text-black min-w-[240px] max-md:max-w-full">
           Upcoming Flights
@@ -122,6 +149,7 @@ export function SkyFare() {
         </div>
       </section>
 
+      {/* Past Flights Section */}
       <section className="flex overflow-hidden relative z-0 gap-10 justify-center items-center px-44 pb-16 w-full max-md:px-5 max-md:max-w-full">
         <h2 className="flex-1 shrink self-stretch my-auto text-4xl font-bold leading-tight text-black min-w-[240px] max-md:max-w-full">
           Past Flights
@@ -135,6 +163,7 @@ export function SkyFare() {
         </div>
       </section>
 
+      {/* Feedback Section */}
       <section className="flex overflow-hidden relative z-0 gap-10 justify-center items-center px-44 pb-16 w-full max-md:px-5 max-md:max-w-full">
         <div className="flex z-0 flex-col flex-1 shrink self-stretch my-auto text-black basis-0 min-w-[240px] max-md:max-w-full">
           <h2 className="text-4xl font-bold leading-tight max-md:max-w-full">
@@ -190,6 +219,7 @@ export function SkyFare() {
         </form>
       </section>
 
+      {/* Flight Statistics Section */}
       <section className="flex overflow-hidden relative z-0 flex-col justify-center px-44 w-full text-base text-black max-md:px-5 max-md:max-w-full">
         <h2 className="flex z-0 gap-10 justify-center items-center w-full text-4xl font-bold leading-tight text-center max-md:max-w-full">
           Flight Statistics
@@ -220,6 +250,7 @@ export function SkyFare() {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="flex overflow-hidden z-0 gap-10 justify-center items-center px-16 mt-4 w-full text-xl leading-7 text-center max-md:px-5 max-md:max-w-full">
         <div className="flex flex-wrap gap-10 justify-center self-stretch my-auto min-h-[100px] min-w-[240px] max-md:max-w-full">
           <p className="w-[322px]">© 2022 Sky Fare. All rights reserved.</p>
@@ -231,7 +262,7 @@ export function SkyFare() {
           </Link>
         </div>
       </footer>
-    </div>
+    </motion.div>
   );
 }
 
