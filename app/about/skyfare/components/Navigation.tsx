@@ -2,6 +2,7 @@
 import * as React from "react";
 import { navigationItems } from "../data/navigationItems";
 import Image from "next/image";
+import Link from "next/link"; // Import Link from Next.js
 
 export function Navigation() {
   return (
@@ -11,14 +12,13 @@ export function Navigation() {
       </div>
       <div className="flex flex-wrap gap-10 justify-center items-center self-stretch my-auto text-base bg-white min-w-[240px] max-md:max-w-full">
         {navigationItems.map((item, index) => (
-          <a
+          <Link
             key={index}
             href={item.href}
             className="self-stretch my-auto transition-all duration-300 transform hover:text-blue-500 hover:scale-110"
-            tabIndex={0}
           >
             {item.label}
-          </a>
+          </Link>
         ))}
         <div className="flex gap-1 items-center self-stretch p-2 my-auto text-sm leading-none rounded-md border border-solid border-black border-opacity-10 text-black text-opacity-50 w-[250px]">
           <label htmlFor="siteSearch" className="sr-only">
