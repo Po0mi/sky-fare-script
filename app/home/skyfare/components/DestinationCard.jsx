@@ -3,7 +3,7 @@
 export default function DestinationCard({ name, country, price, image, link }) {
   return (
     <div className="
-      flex flex-col flex-1 shrink rounded-md basis-0 min-w-[240px] border shadow-md transition-all duration-300 
+      flex flex-col flex-1 shrink rounded-md basis-0 min-w-[350px] border shadow-md transition-all duration-300 
       transform hover:scale-105 hover:shadow-lg hover:shadow-gray-500 overflow-hidden
       h-[320px]
     ">

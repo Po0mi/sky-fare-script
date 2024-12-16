@@ -1,3 +1,4 @@
+"use client";
 import { InfoCardProps } from "../types";
 
 export const infoCards: InfoCardProps[] = [
